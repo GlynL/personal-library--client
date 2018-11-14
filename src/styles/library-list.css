@@ -19,7 +19,12 @@
   border-bottom: 0.5px solid #f2f2f2;
 }
 
-.libary-list__link {
+.library-list__link {
   text-decoration: none;
   color: var(--main-font-color);
+}
+
+.library-list__link:hover,
+.library-list__link:active {
+  color: var(--strong-font-color);
 }

@@ -12,7 +12,7 @@ class LibraryList extends Component {
   renderBooks() {
     return Object.values(this.props.books).map(book => (
       <li className="library-list__item" key={book._id}>
-        <Link className="libary-list__link" to={`/books/${book._id}`}>
+        <Link className="library-list__link" to={`/books/${book._id}`}>
           <h2>{book.title}</h2>
         </Link>
         <p>Comments: {book.comments}</p>
