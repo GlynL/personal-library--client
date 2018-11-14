@@ -1,4 +1,4 @@
-import { FETCH_BOOKS, DELETE_BOOK } from "../actions";
+import { FETCH_BOOKS, DELETE_BOOK, ADD_BOOK, DELETE_BOOKS } from "../actions";
 
 export default function(state = {}, action) {
   switch (action.type) {
@@ -13,6 +13,13 @@ export default function(state = {}, action) {
       const books = { ...state };
       delete books[action.payload];
       return books;
+    }
+    case ADD_BOOK: {
+      const book = action.payload.data;
+      return { ...state, [book._id]: book };
+    }
+    case DELETE_BOOKS: {
+      return {};
     }
     default:
       return state;

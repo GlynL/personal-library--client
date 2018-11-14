@@ -1,3 +1,10 @@
+:root {
+  --main-bg-color: #0f1637;
+  --main-font-color: #e2c982;
+  --strong-font-color: #f0691e;
+  --danger-color: #f74129;
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -11,4 +18,36 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+body {
+  background: var(--main-bg-color);
+}
+
+.btn {
+  border: none;
+  border-radius: 2px;
+  padding: 5px 8px;
+}
+
+.btn--danger {
+  background: var(--danger-color);
+  color: #f2f2f2;
+}
+
+.btn:hover {
+  cursor: pointer;
+}
+
+.btn--danger:hover,
+.btn--danger:active {
+  background: #f2f2f2;
+  color: var(--danger-color);
+  border: 0.5px solid var(--danger-color);
+}
+
+.loading {
+  margin-top: 1rem;
+  text-align: center;
+  color: var(--main-font-color);
 }

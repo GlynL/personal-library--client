@@ -1,0 +1,15 @@
+.nav {
+  display: flex;
+  border-bottom: 0.5px solid #f2f2f2;
+}
+
+.nav__link {
+  text-decoration: none;
+  color: var(--main-font-color);
+  padding: 0.5rem;
+}
+
+.nav__link:hover,
+.nav__link:focus {
+  color: var(--strong-font-color);
+}

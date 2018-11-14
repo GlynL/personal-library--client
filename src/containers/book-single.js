@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-
 import { fetchBook, deleteBook, clearBook, addComment } from "../actions";
+import "../styles/book-single.css";
 
 class SingleBook extends Component {
   constructor(props) {
@@ -48,13 +48,15 @@ class SingleBook extends Component {
   render() {
     const { book } = this.props;
     if (Object.keys(book).length === 0 && book.constructor === Object)
-      return <div>Loading...</div>;
+      return <section className="loading">Loading...</section>;
     return (
-      <div>
-        <h1>{book.title}</h1>
-        <ul>{this.renderComments()}</ul>
-        <form onSubmit={this.handleSubmit}>
+      <section className="single-book">
+        <h1 className="single-book__heading">{book.title}</h1>
+        <h2 className="single-book__heading">Comments</h2>
+        <ul className="single-book__list">{this.renderComments()}</ul>
+        <form className="single-book__form" onSubmit={this.handleSubmit}>
           <input
+            className="single-book__input"
             name="comment"
             value={this.state.comment}
             onChange={this.handleChange}
@@ -62,8 +64,10 @@ class SingleBook extends Component {
             placeholder="Add a Comment"
           />
         </form>
-        <button onClick={this.handleDelete}>Delete</button>
-      </div>
+        <button className="btn btn--danger" onClick={this.handleDelete}>
+          Delete
+        </button>
+      </section>
     );
   }
 }

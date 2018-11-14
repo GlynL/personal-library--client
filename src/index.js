@@ -10,6 +10,7 @@ import "./styles/index.css";
 
 import LibraryList from "./containers/library-list";
 import SingleBook from "./containers/book-single";
+import NewBook from "./containers/book-new";
 import Navbar from "./components/navbar";
 
 // https://spark-cathedral.glitch.me/
@@ -23,6 +24,7 @@ ReactDOM.render(
         <Navbar />
         <Switch>
           <Route exact path="/" component={LibraryList} />
+          <Route path="/books/new" component={NewBook} />
           <Route path="/books/:id" component={SingleBook} />
         </Switch>
       </>
