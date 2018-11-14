@@ -10,6 +10,7 @@ import "./styles/index.css";
 
 import LibraryList from "./containers/library-list";
 import SingleBook from "./containers/book-single";
+import Navbar from "./components/navbar";
 
 // https://spark-cathedral.glitch.me/
 
@@ -18,10 +19,13 @@ const createStoreWithMiddleware = applyMiddleware(promise)(createStore);
 ReactDOM.render(
   <Provider store={createStoreWithMiddleware(reducers)}>
     <BrowserRouter>
-      <Switch>
-        <Route exact path="/" component={LibraryList} />
-        <Route path="/books/:id" component={SingleBook} />
-      </Switch>
+      <>
+        <Navbar />
+        <Switch>
+          <Route exact path="/" component={LibraryList} />
+          <Route path="/books/:id" component={SingleBook} />
+        </Switch>
+      </>
     </BrowserRouter>
   </Provider>,
   document.getElementById("root")

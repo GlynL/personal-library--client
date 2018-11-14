@@ -1,3 +1,5 @@
+can't work out why action not reaching reducer
+
 Uses API from https://personal-library--glyn.herokuapp.com/
 
 - HOME
